@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  mock-server:
+    container_name: mmpf-monolithic-mock-server
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: ghcr.io/machinemapplatform/mmpf-monolithic/mock-server:latest
+networks:
+  default:
+    name: mmpf-monolithic_devcontainer_default
+    external: true

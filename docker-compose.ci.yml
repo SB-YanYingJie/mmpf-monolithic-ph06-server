@@ -1,0 +1,15 @@
+version: "3.1"
+services:
+  app:
+    image: mmpf_monolithic_app_for_ci
+    env_file: ./env/cicontainer.env
+    volumes:
+      - ./:/app:cached
+    command: sh -c 'mv /tmp/libKdSlam.so /usr/local/lib;  mv /tmp/ORBvoc.kdbow /app/lib; mv /tmp/hall.kdmp /app/lib/; sleep infinity'
+  redis:
+    image: redis:6.2.1
+    ports:
+      - "6379:6379"
+secrets:
+  my_secret:
+    file: .token

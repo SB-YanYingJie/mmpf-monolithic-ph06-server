@@ -1,0 +1,34 @@
+{
+    "editor.renderWhitespace": "all",
+    "go.toolsEnvVars": {
+        "GO111MODULE": "on"
+    },
+    "gopls": {
+        "experimentalWorkspaceModule": true,
+    },
+    "cSpell.words": [
+        "awscli",
+        "gimock",
+        "machinemapplatform",
+        "mmpf",
+        "devcontainer",
+        "docsmsft",
+        "errcheck",
+        "gitleaks",
+        "goimports",
+        "golangci",
+        "gopath",
+        "GOPRIVATE",
+        "GOPROXY",
+        "govet",
+        "ineffassign",
+        "machinemapplatform",
+        "Peshkov",
+        "prealloc",
+        "PTRACE",
+        "seccomp",
+        "staticcheck",
+        "techoffice",
+        "ulsystems"
+    ]
+}

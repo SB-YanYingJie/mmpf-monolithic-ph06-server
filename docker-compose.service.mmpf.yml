@@ -1,0 +1,18 @@
+version: "3.1"
+
+services:
+  mmpf-monolithic:
+    image: "ghcr.io/machinemapplatform/mmpf-monolithic:latest"
+    # docker-from-dockerで使用すると、マウント先ディレクトリが空になる。※ホストOSから起動する事。
+    volumes:
+      - ./zap/prd:/app/zap/prd
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./lib:/app/lib
+    env_file: ${ENV_PATH}
+    # docker-from-dockerで使用すると、devcontainer内のenvのPORTを読んでしまう。
+    ports:
+      - "${HOST_PORT}:${PORT}"
+networks:
+  default:
+    external: true
+    name: monolithic_network

@@ -1,0 +1,100 @@
+{
+  "family": "mmpf-monolithic-mock-server-task",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+      {
+          "name": "mmpf-monolithic-mock-server1",
+          "image": "ghcr.io/machinemapplatform/mmpf-monolithic/mock-server:v3",
+          "repositoryCredentials": {
+              "credentialsParameter": "arn:aws:secretsmanager:ap-northeast-1:130859579203:secret:dev/mmpf-monolithic/ghcr-NypQSv"
+          },
+          "portMappings": [
+            {
+                "containerPort": 50051,
+                "protocol": "tcp"
+            }
+          ],
+          "essential": true,
+          "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                  "awslogs-group": "dev/ecs/mmpf-monolithic-mock-server1",
+                  "awslogs-create-group": "true",
+                  "awslogs-region": "ap-northeast-1",
+                  "awslogs-stream-prefix": "ecs"
+              }
+          },
+          "environment": [
+            {
+              "name":"PORT",
+              "value":":50051"
+            }
+          ]
+      },
+    {
+        "name": "mmpf-monolithic-mock-server2",
+        "image": "ghcr.io/machinemapplatform/mmpf-monolithic/mock-server:v3",
+        "repositoryCredentials": {
+            "credentialsParameter": "arn:aws:secretsmanager:ap-northeast-1:130859579203:secret:dev/mmpf-monolithic/ghcr-NypQSv"
+        },
+        "portMappings": [
+          {
+              "containerPort": 50052,
+              "protocol": "tcp"
+          }
+        ],
+        "essential": true,
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "dev/ecs/mmpf-monolithic-mock-server2",
+                "awslogs-create-group": "true",
+                "awslogs-region": "ap-northeast-1",
+                "awslogs-stream-prefix": "ecs"
+            }
+        },
+        "environment": [
+          {
+            "name":"PORT",
+            "value":":50052"
+          }
+        ]
+    },
+    {
+        "name": "mmpf-monolithic-mock-server3",
+        "image": "ghcr.io/machinemapplatform/mmpf-monolithic/mock-server:v3",
+        "repositoryCredentials": {
+            "credentialsParameter": "arn:aws:secretsmanager:ap-northeast-1:130859579203:secret:dev/mmpf-monolithic/ghcr-NypQSv"
+        },
+        "portMappings": [
+          {
+              "containerPort": 50053,
+              "protocol": "tcp"
+          }
+        ],
+        "essential": true,
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "dev/ecs/mmpf-monolithic-mock-server3",
+                "awslogs-create-group": "true",
+                "awslogs-region": "ap-northeast-1",
+                "awslogs-stream-prefix": "ecs"
+            }
+        },
+        "environment": [
+            {
+              "name":"PORT",
+              "value":":50053"
+            }
+        ]
+    }
+],
+  "requiresCompatibilities": [
+      "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::130859579203:role/dev/mmpf-monolithic/MockServerExecutionRole",
+  "taskRoleArn": "arn:aws:iam::130859579203:role/dev/mmpf-monolithic/MockServerTaskRole"
+}

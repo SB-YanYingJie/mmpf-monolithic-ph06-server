@@ -1,0 +1,89 @@
+{
+  "index_patterns": [
+    "pubsub-*"
+  ],
+  "template": {
+    "mappings": {
+      "properties": {
+        "data": {
+          "properties": {
+            "image": {
+              "properties": {
+                "c": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            },
+            "pos_x": {
+              "type": "float"
+            },
+            "pos_y": {
+              "type": "float"
+            },
+            "pos_z": {
+              "type": "float"
+            },
+            "pose_command": {
+              "properties": {
+                "pos_x": {
+                  "type": "float"
+                },
+                "pos_y": {
+                  "type": "float"
+                },
+                "pos_z": {
+                  "type": "float"
+                },
+                "quat_w": {
+                  "type": "float"
+                },
+                "quat_x": {
+                  "type": "float"
+                },
+                "quat_y": {
+                  "type": "float"
+                },
+                "quat_z": {
+                  "type": "float"
+                },
+                "slam_state": {
+                  "type": "long"
+                }
+              }
+            },
+            "quat_w": {
+              "type": "float"
+            },
+            "quat_x": {
+              "type": "float"
+            },
+            "quat_y": {
+              "type": "float"
+            },
+            "quat_z": {
+              "type": "float"
+            },
+            "slam_state": {
+              "type": "long"
+            },
+            "type": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "cluster": "mmpf-mock-cluster",
+  "taskDefinition": "mmpf-monolithic-mock-server-task:7",
+  "desiredCount": 0,
+  "networkConfiguration": {
+      "awsvpcConfiguration": {
+          "subnets": [
+              "subnet-09d53a3b3a7425b6e"
+          ],
+          "securityGroups":[
+              "sg-0c715e5eb55192d6e"
+          ],
+          "assignPublicIp": "ENABLED"
+      }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "logs:CreateLogStream",
+              "logs:CreateLogGroup",
+              "logs:PutLogEvents"
+          ],
+          "Resource": "arn:*:logs:*:130859579203:*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "secretsmanager:GetSecretValue"
+          ],
+          "Resource": "arn:aws:secretsmanager:*:130859579203:secret:dev/mmpf-monolithic/ghcr-NypQSv"
+      }
+  ]
+}

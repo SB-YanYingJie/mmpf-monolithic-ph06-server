@@ -1,0 +1,35 @@
+{
+	"name": "Go",
+	"dockerComposeFile": [
+		"docker-compose.devcontainer.yml"
+	],
+	"service": "app",
+	"workspaceFolder": "/app",
+	// Add the IDs of extensions you want installed when the container is created.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.Go",
+        "shd101wyy.markdown-preview-enhanced",
+        "RomanPeshkov.vscode-text-tables",
+        "docsmsft.docs-yaml",
+        "streetsidesoftware.code-spell-checker",
+        "EditorConfig.EditorConfig",
+        "ms-vsliveshare.vsliveshare"
+      ]
+    }
+  },
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bash ./.devcontainer/lifecycle/postCreateCommand.sh",
+	"initializeCommand": "bash ./.devcontainer/lifecycle/initializeCommand.sh",
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+  "features": {
+    "aws-cli": "latest",
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest"
+    }
+  }
+}

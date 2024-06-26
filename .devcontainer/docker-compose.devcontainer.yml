@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        GO_VARIANT: 1.18
+        OPENCV_VARIANT: 4.5.5
+    env_file: ../env/devcontainer.env
+    volumes:
+      - ../:/app:cached
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: sleep infinity
+  redis:
+    image: redis:6.2.1
+    ports:
+      - "6379:6379"

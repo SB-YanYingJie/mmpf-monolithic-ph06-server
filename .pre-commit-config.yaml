@@ -1,0 +1,10 @@
+# https://pre-commit.com/
+
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: gitleaks detection
+        language: system
+        entry: gitleaks protect --staged -v
+        verbose: true

@@ -1,0 +1,8 @@
+.env.iphone13-1
+.env.iphone13-2
+#.env.iphoneX-3
+#.env.iphoneX-4
+#.env.iphoneX-5
+#.env.iphoneX-6
+#.env.xacti
+#.env.sampleXXX
